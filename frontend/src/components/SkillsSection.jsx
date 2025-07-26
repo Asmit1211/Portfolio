@@ -153,32 +153,51 @@ const SkillsSection = () => {
           })}
         </div>
 
-        {/* Currently Learning Section */}
-        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 border border-indigo-200">
-          <div className="text-center mb-8">
-            <BookOpen className="w-12 h-12 text-indigo-600 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-slate-800 mb-2">Currently Learning</h3>
-            <p className="text-slate-600">Expanding my skillset with new technologies</p>
-          </div>
-          
-          <div className="flex flex-wrap gap-4 justify-center">
-            {skills.frontend.filter(skill => skill.learning).map((skill, index) => (
-              <div key={index} className="bg-white p-4 rounded-lg border border-indigo-200 text-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Code className="w-6 h-6 text-white" />
+          <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 border border-indigo-200">
+            <div className="text-center mb-8">
+              <BookOpen className="w-12 h-12 text-indigo-600 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">Currently Learning</h3>
+              <p className="text-slate-600">Expanding my skillset with new technologies</p>
+            </div>
+            
+            <div className="flex flex-wrap gap-4 justify-center">
+              {/* Backend Technologies Learning */}
+              <div className="bg-white p-4 rounded-lg border border-indigo-200 text-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Server className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="font-semibold text-slate-800 mb-1">{skill.name}</h4>
+                <h4 className="font-semibold text-slate-800 mb-1">Backend Technologies</h4>
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
                   <span className="text-sm text-slate-600">In Progress</span>
                 </div>
                 <div className="mt-2">
-                  <Progress value={skill.level} className="h-1 bg-slate-200" />
+                  <div className="w-full bg-slate-200 h-1 rounded-full">
+                    <div className="bg-emerald-500 h-1 rounded-full" style={{width: '65%'}}></div>
+                  </div>
                 </div>
               </div>
-            ))}
+              
+              {/* React Learning */}
+              {skills.frontend.filter(skill => skill.learning).map((skill, index) => (
+                <div key={index} className="bg-white p-4 rounded-lg border border-indigo-200 text-center">
+                  <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Code className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-semibold text-slate-800 mb-1">{skill.name}</h4>
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm text-slate-600">In Progress</span>
+                  </div>
+                  <div className="mt-2">
+                    <div className="w-full bg-slate-200 h-1 rounded-full">
+                      <div className="bg-indigo-500 h-1 rounded-full" style={{width: `${skill.level}%`}}></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
 
         {/* Skills Overview */}
         <div className="mt-12 text-center">
