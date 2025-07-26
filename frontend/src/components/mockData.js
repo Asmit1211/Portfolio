@@ -21,13 +21,13 @@ export const skills = {
     { name: "React.js", level: 40, icon: "Code", learning: true }
   ],
   backend: [
-    { name: "Node.js", level: 75, icon: "Server" },
-    { name: "Express.js", level: 70, icon: "Server" },
-    { name: "REST APIs", level: 75, icon: "Server" }
+    { name: "Node.js", level: 60, icon: "Server", learning: true },
+    { name: "Express.js", level: 55, icon: "Server", learning: true },
+    { name: "REST APIs", level: 65, icon: "Server", learning: true }
   ],
   database: [
-    { name: "MongoDB", level: 70, icon: "Database" },
-    { name: "MySQL", level: 65, icon: "Database" }
+    { name: "MongoDB", level: 50, icon: "Database", learning: true },
+    { name: "MySQL", level: 45, icon: "Database", learning: true }
   ],
   tools: [
     { name: "Git", level: 80, icon: "Code" },
