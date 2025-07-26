@@ -8,8 +8,9 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/asmitsamal",
   github: "https://github.com/Asmit1211",
   education: "Final-Year BSc CS Student – Maharshi Dayanand College (Mumbai University)",
-  bio: "Passionate computer science student with a strong foundation in web development and backend technologies. Currently exploring React.js while building robust applications with Node.js and Express. I love solving complex problems and creating efficient, scalable solutions.",
-  motto: "Code with purpose, build with passion."
+  bio: "Passionate computer science student with a strong foundation in web development and currently expanding my expertise in backend technologies. I love solving complex problems and creating efficient, scalable solutions with Node.js, Express, and database systems.",
+  motto: "Code with purpose, build with passion.",
+  profileImage: "https://customer-assets.emergentagent.com/job_asmit-portfolio/artifacts/3g12tsn1_profile.jpg"
 };
 
 export const skills = {
