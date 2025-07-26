@@ -15,25 +15,25 @@ export const personalInfo = {
 export const skills = {
   frontend: [
     { name: "HTML", level: 90, icon: "Code" },
-    { name: "CSS", level: 85, icon: "Palette" },
-    { name: "JavaScript", level: 80, icon: "Zap" },
-    { name: "React.js", level: 40, icon: "Atom", learning: true }
+    { name: "CSS", level: 85, icon: "Code" },
+    { name: "JavaScript", level: 80, icon: "Code" },
+    { name: "React.js", level: 40, icon: "Code", learning: true }
   ],
   backend: [
     { name: "Node.js", level: 75, icon: "Server" },
-    { name: "Express.js", level: 70, icon: "Route" },
-    { name: "REST APIs", level: 75, icon: "Globe" }
+    { name: "Express.js", level: 70, icon: "Server" },
+    { name: "REST APIs", level: 75, icon: "Server" }
   ],
   database: [
     { name: "MongoDB", level: 70, icon: "Database" },
-    { name: "MySQL", level: 65, icon: "Table" }
+    { name: "MySQL", level: 65, icon: "Database" }
   ],
   tools: [
-    { name: "Git", level: 80, icon: "GitBranch" },
-    { name: "GitHub", level: 80, icon: "Github" },
-    { name: "VS Code", level: 90, icon: "Code2" },
-    { name: "Postman", level: 75, icon: "Send" },
-    { name: "Razorpay", level: 60, icon: "CreditCard" }
+    { name: "Git", level: 80, icon: "Code" },
+    { name: "GitHub", level: 80, icon: "Code" },
+    { name: "VS Code", level: 90, icon: "Code" },
+    { name: "Postman", level: 75, icon: "Wrench" },
+    { name: "Razorpay", level: 60, icon: "Wrench" }
   ]
 };
 
