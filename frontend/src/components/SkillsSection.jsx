@@ -74,7 +74,7 @@ const SkillsSection = () => {
       Code: Code,
       Server: Server,
       Database: Database,
-      Tool: Tool,
+      Wrench: Wrench,
       BookOpen: BookOpen
     };
     const IconComponent = iconMap[iconName] || Code;
