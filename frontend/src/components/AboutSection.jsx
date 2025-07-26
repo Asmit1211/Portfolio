@@ -17,8 +17,24 @@ const AboutSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Bio */}
+          {/* Left Column - Profile Image */}
           <div className="space-y-8">
+            {/* Profile Image */}
+            <div className="relative">
+              <div className="w-80 h-80 mx-auto relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl transform rotate-6"></div>
+                <div className="absolute inset-0 bg-white rounded-2xl transform -rotate-3 shadow-xl"></div>
+                <img
+                  src={personalInfo.profileImage}
+                  alt="Asmit Nagesh Samal"
+                  className="relative w-full h-full object-cover rounded-2xl shadow-2xl"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-emerald-500 text-white p-3 rounded-full shadow-lg">
+                  <GraduationCap className="w-6 h-6" />
+                </div>
+              </div>
+            </div>
+
             {/* Quote */}
             <Card className="border-l-4 border-l-indigo-600 bg-gradient-to-r from-indigo-50 to-purple-50">
               <CardContent className="p-6">
@@ -28,7 +44,10 @@ const AboutSection = () => {
                 </p>
               </CardContent>
             </Card>
+          </div>
 
+          {/* Right Column - Bio & Info */}
+          <div className="space-y-8">
             {/* Bio Text */}
             <div className="space-y-4">
               <p className="text-lg text-slate-600 leading-relaxed">
@@ -53,10 +72,8 @@ const AboutSection = () => {
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Right Column - Soft Skills */}
-          <div className="space-y-8">
+            {/* Soft Skills */}
             <Card className="h-full">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
@@ -87,7 +104,7 @@ const AboutSection = () => {
                     Currently Learning
                   </h4>
                   <p className="text-slate-600">
-                    React.js - Expanding my frontend development skills to build more interactive and dynamic user interfaces.
+                    Backend Technologies - Diving deep into Node.js, Express.js, MongoDB, and building scalable server-side applications with RESTful APIs.
                   </p>
                 </div>
 
