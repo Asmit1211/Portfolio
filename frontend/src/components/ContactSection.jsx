@@ -6,6 +6,10 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { useToast } from '../hooks/use-toast';
 import { personalInfo } from './mockData';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -29,15 +33,28 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await axios.post(`${API}/contact`, formData);
+      
+      if (response.data.success) {
+        toast({
+          title: "Message Sent!",
+          description: response.data.message || "Thank you for reaching out. I'll get back to you soon!",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
       toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
+        title: "Error",
+        description: error.response?.data?.detail || "Sorry, there was an error sending your message. Please try again.",
+        variant: "destructive"
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
@@ -125,6 +142,7 @@ const ContactSection = () => {
                         onChange={handleInputChange}
                         placeholder="John Doe"
                         className="bg-white border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div>
@@ -140,6 +158,7 @@ const ContactSection = () => {
                         onChange={handleInputChange}
                         placeholder="john@example.com"
                         className="bg-white border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -157,6 +176,7 @@ const ContactSection = () => {
                       onChange={handleInputChange}
                       placeholder="Project Collaboration / Job Opportunity / General Inquiry"
                       className="bg-white border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                      disabled={isSubmitting}
                     />
                   </div>
                   
@@ -173,13 +193,14 @@ const ContactSection = () => {
                       onChange={handleInputChange}
                       placeholder="Tell me about your project, opportunity, or just say hello..."
                       className="bg-white border-slate-300 focus:border-indigo-500 focus:ring-indigo-500 resize-none"
+                      disabled={isSubmitting}
                     />
                   </div>
                   
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 text-lg font-medium transform hover:scale-105 transition-all duration-200"
+                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 text-lg font-medium transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center">
