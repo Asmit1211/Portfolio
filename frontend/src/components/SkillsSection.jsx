@@ -33,7 +33,7 @@ const SkillsSection = () => {
     },
     {
       title: 'Tools',
-      icon: Tool,
+      icon: Wrench,
       skills: skills.tools,
       color: 'from-orange-500 to-red-500',
       bgColor: 'bg-orange-50 border-orange-200'
