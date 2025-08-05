@@ -235,7 +235,7 @@ const CertificationsSection = () => {
               <div className="text-slate-600 font-medium">Providers</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-emerald-600 mb-2">2024</div>
+              <div className="text-3xl font-bold text-emerald-600 mb-2">2025</div>
               <div className="text-slate-600 font-medium">Latest Year</div>
             </div>
             <div>
