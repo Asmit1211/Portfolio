@@ -78,7 +78,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-indigo-600 ${
+                className={`text-sm cursor-pointer font-medium transition-colors duration-200 hover:text-indigo-600 ${
                   activeSection === item.id ? 'text-indigo-600' : 'text-slate-600'
                 }`}
               >
